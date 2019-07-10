@@ -1,97 +1,57 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
+import React from 'react';
+import { Easing, Animated } from 'react-native';
+import { useScreens } from 'react-native-screens';
+import { createStackNavigator, createAppContainer, createSwitchNavigator } from 'react-navigation';
+import PairingScreen from './screen/PairingScreen';
+import HomeLoadingScreen from './screen/HomeLoadingScreen';
+import HomeScreen from './screen/HomeScreen';
 
-import React, {Fragment} from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
+useScreens();
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+const transitionConfig = () => {
+  return {
+    transitionSpec: {
+      duration: 800,
+      easing: Easing.out(Easing.poly(4)),
+      timing: Animated.timing,
+      useNativeDriver: true,
+    },
+    screenInterpolator: (sceneProps) => {
+      const { position, scene } = sceneProps;
+      const thisSceneIndex = scene.index;
+      const opacity = position.interpolate({
+        inputRange: [thisSceneIndex - 1, thisSceneIndex],
+        outputRange: [0, 1],
+      });
+      return { opacity };
+    },
+  }
+}
 
-const App = () => {
-  return (
-    <Fragment>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </Fragment>
-  );
-};
+const PairingStack = createStackNavigator({
+  PairingScreen
+}, {
+    headerMode: 'none',
+    initialRouteName: "PairingScreen",
+    transitionConfig
+  });
 
-const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
+const HomeStack = createStackNavigator({
+  HomeScreen
+}, {
+    headerMode: 'none',
+    initialRouteName: "HomeScreen",
+    transitionConfig
+  });
 
-export default App;
+const AppNavigator = createSwitchNavigator({
+  HomeLoadingScreen,
+  PairingStack,
+  HomeStack
+}, {
+    initialRouteName: 'HomeLoadingScreen',
+  });
+
+const AppContainer = createAppContainer(AppNavigator);
+
+export default () => <AppContainer />;

@@ -17,8 +17,17 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* midTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* midTests.m */; };
 		30D4EA92FDFE9CBACAAF9251 /* libPods-mid-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5290D3BC1C60DA3567D6A7F /* libPods-mid-tvOS.a */; };
+		595BEDFA19304068A4065ED0 /* plexri.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E764FCE676C42AF95AFE31A /* plexri.ttf */; };
+		5BB18760C81846B6B71C1779 /* plexb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CA5AEB67D734A468969A55A /* plexb.ttf */; };
 		63D037966C24DECE217BE15F /* libPods-mid.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E4FCC62798A8A561B017FD /* libPods-mid.a */; };
+		76051AB367224F94841CBDF5 /* plexl.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3997FCFF52ED4BCA8B6568A3 /* plexl.ttf */; };
 		791E487FF70F9A117CE9D9E1 /* libPods-midTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D1BD34C0F39DE3A04B2BB10 /* libPods-midTests.a */; };
+		9B7E8E0ECA2243BB90FA4179 /* plexr.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98285C9E6701481DBAB3CBB8 /* plexr.ttf */; };
+		9FE5AB6D29DB441AA0A7118B /* plexbi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 041EFFCFDD604FEA951AF989 /* plexbi.ttf */; };
+		AA2D41B022D66E4500A53314 /* libRNScreens.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2D41AD22D66E1E00A53314 /* libRNScreens.a */; };
+		AA73A75022D66307000CCD0B /* libBleManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA73A74622D662C8000CCD0B /* libBleManager.a */; };
+		AA73A79C22D664E7000CCD0B /* libReact-Core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA73A79B22D664E7000CCD0B /* libReact-Core.a */; };
+		C1E0C9B34074408BA3318377 /* plexli.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6740D9C447DF4BC49E5C2199 /* plexli.ttf */; };
 		DFB414FF266803D8F100A472 /* libPods-mid-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4118EC698494759FC85D96A4 /* libPods-mid-tvOSTests.a */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +46,27 @@
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
 			remoteInfo = "mid-tvOS";
 		};
+		AA2D41AC22D66E1E00A53314 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA2D41A722D66E1E00A53314 /* RNScreens.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNScreens;
+		};
+		AA2D41AE22D66E1E00A53314 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA2D41A722D66E1E00A53314 /* RNScreens.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B5C32A4F220C6379000FFB8D;
+			remoteInfo = "RNScreens-tvOS";
+		};
+		AA73A74522D662C8000CCD0B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA73A74122D662C8000CCD0B /* BleManager.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = BleManager;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +74,7 @@
 		00E356EE1AD99517003FC87E /* midTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = midTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* midTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = midTests.m; sourceTree = "<group>"; };
+		041EFFCFDD604FEA951AF989 /* plexbi.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = plexbi.ttf; path = ../assets/fonts/plexbi.ttf; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* mid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = mid/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = mid/AppDelegate.m; sourceTree = "<group>"; };
@@ -55,10 +86,19 @@
 		2D02E47B1E0B4A5D006451C7 /* mid-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mid-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* mid-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mid-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DCCB6C6C32739F3666E6939 /* Pods-mid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mid.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mid/Pods-mid.debug.xcconfig"; sourceTree = "<group>"; };
+		2E764FCE676C42AF95AFE31A /* plexri.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = plexri.ttf; path = ../assets/fonts/plexri.ttf; sourceTree = "<group>"; };
+		3997FCFF52ED4BCA8B6568A3 /* plexl.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = plexl.ttf; path = ../assets/fonts/plexl.ttf; sourceTree = "<group>"; };
+		3CA5AEB67D734A468969A55A /* plexb.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = plexb.ttf; path = ../assets/fonts/plexb.ttf; sourceTree = "<group>"; };
 		4118EC698494759FC85D96A4 /* libPods-mid-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mid-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D1BD34C0F39DE3A04B2BB10 /* libPods-midTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-midTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6740D9C447DF4BC49E5C2199 /* plexli.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = plexli.ttf; path = ../assets/fonts/plexli.ttf; sourceTree = "<group>"; };
 		8ACED5C47E2525BE72E482CA /* Pods-mid-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mid-tvOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-mid-tvOSTests/Pods-mid-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		8DC8A26681A8F86F5C1C9C4B /* Pods-mid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mid.release.xcconfig"; path = "Pods/Target Support Files/Pods-mid/Pods-mid.release.xcconfig"; sourceTree = "<group>"; };
+		98285C9E6701481DBAB3CBB8 /* plexr.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = plexr.ttf; path = ../assets/fonts/plexr.ttf; sourceTree = "<group>"; };
+		AA2D41A722D66E1E00A53314 /* RNScreens.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNScreens.xcodeproj; path = "../node_modules/react-native-screens/ios/RNScreens.xcodeproj"; sourceTree = "<group>"; };
+		AA73A74122D662C8000CCD0B /* BleManager.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BleManager.xcodeproj; path = "../node_modules/react-native-ble-manager/ios/BleManager.xcodeproj"; sourceTree = "<group>"; };
+		AA73A79B22D664E7000CCD0B /* libReact-Core.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-Core.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA73A7AE22D668E1000CCD0B /* libReact-cxxreact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-cxxreact.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB42B12A5C44945300991F35 /* Pods-mid-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mid-tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mid-tvOS/Pods-mid-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		B5290D3BC1C60DA3567D6A7F /* libPods-mid-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mid-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2E4FCC62798A8A561B017FD /* libPods-mid.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mid.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +122,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA73A79C22D664E7000CCD0B /* libReact-Core.a in Frameworks */,
+				AA73A75022D66307000CCD0B /* libBleManager.a in Frameworks */,
+				AA2D41B022D66E4500A53314 /* libRNScreens.a in Frameworks */,
 				63D037966C24DECE217BE15F /* libPods-mid.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -122,6 +165,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		0E83B75BF1354AEB9794559E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3CA5AEB67D734A468969A55A /* plexb.ttf */,
+				041EFFCFDD604FEA951AF989 /* plexbi.ttf */,
+				3997FCFF52ED4BCA8B6568A3 /* plexl.ttf */,
+				6740D9C447DF4BC49E5C2199 /* plexli.ttf */,
+				98285C9E6701481DBAB3CBB8 /* plexr.ttf */,
+				2E764FCE676C42AF95AFE31A /* plexri.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		13B07FAE1A68108700A75B9A /* mid */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +195,8 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AA73A7AE22D668E1000CCD0B /* libReact-cxxreact.a */,
+				AA73A79B22D664E7000CCD0B /* libReact-Core.a */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				C2E4FCC62798A8A561B017FD /* libPods-mid.a */,
@@ -152,6 +210,8 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				AA2D41A722D66E1E00A53314 /* RNScreens.xcodeproj */,
+				AA73A74122D662C8000CCD0B /* BleManager.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -165,6 +225,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				A6134505E84E2A902549175E /* Pods */,
+				0E83B75BF1354AEB9794559E /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -195,6 +256,23 @@
 				DD43CE6FE31C6783513620A1 /* Pods-midTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		AA2D41A822D66E1E00A53314 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA2D41AD22D66E1E00A53314 /* libRNScreens.a */,
+				AA2D41AF22D66E1E00A53314 /* libRNScreens-tvOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA73A74222D662C8000CCD0B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA73A74622D662C8000CCD0B /* libBleManager.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,12 +362,15 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 940;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = APPN2F7QS9;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -307,12 +388,23 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = AA73A74222D662C8000CCD0B /* Products */;
+					ProjectRef = AA73A74122D662C8000CCD0B /* BleManager.xcodeproj */;
+				},
+				{
+					ProductGroup = AA2D41A822D66E1E00A53314 /* Products */;
+					ProjectRef = AA2D41A722D66E1E00A53314 /* RNScreens.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				13B07F861A680F5B00A75B9A /* mid */,
@@ -322,6 +414,30 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		AA2D41AD22D66E1E00A53314 /* libRNScreens.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNScreens.a;
+			remoteRef = AA2D41AC22D66E1E00A53314 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AA2D41AF22D66E1E00A53314 /* libRNScreens-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRNScreens-tvOS.a";
+			remoteRef = AA2D41AE22D66E1E00A53314 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AA73A74622D662C8000CCD0B /* libBleManager.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libBleManager.a;
+			remoteRef = AA73A74522D662C8000CCD0B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		00E356EC1AD99517003FC87E /* Resources */ = {
@@ -337,6 +453,12 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				5BB18760C81846B6B71C1779 /* plexb.ttf in Resources */,
+				9FE5AB6D29DB441AA0A7118B /* plexbi.ttf in Resources */,
+				76051AB367224F94841CBDF5 /* plexl.ttf in Resources */,
+				C1E0C9B34074408BA3318377 /* plexli.ttf in Resources */,
+				9B7E8E0ECA2243BB90FA4179 /* plexr.ttf in Resources */,
+				595BEDFA19304068A4065ED0 /* plexri.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -627,6 +749,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = APPN2F7QS9;
 				INFOPLIST_FILE = mid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -634,7 +757,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.utd.sd.MiD;
 				PRODUCT_NAME = mid;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -646,6 +769,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = APPN2F7QS9;
 				INFOPLIST_FILE = mid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -653,7 +777,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.utd.sd.MiD;
 				PRODUCT_NAME = mid;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
