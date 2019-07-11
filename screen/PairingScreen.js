@@ -1,10 +1,7 @@
 import React from 'react';
 import { View, Image, Platform, StyleSheet, Text, TouchableWithoutFeedback, PermissionsAndroid, NativeModules, NativeEventEmitter, FlatList } from 'react-native';
-import BleManager from 'react-native-ble-manager';
 import { COLOR, SHADOW, TEXT, UUID } from '../Constants';
-
-const BleManagerModule = NativeModules.BleManager;
-const bleManagerEmitter = new NativeEventEmitter(BleManagerModule);
+import BleManager, { BleEmitter } from '../services/BLEService';
 
 class PairingScreen extends React.Component {
 
@@ -18,12 +15,7 @@ class PairingScreen extends React.Component {
     }
 
     componentDidMount() {
-        BleManager.start({ showAlert: false })
-            .then(() => {
-                // Success code
-                console.log('Module initialized');
-            });
-        this.handlerDiscover = bleManagerEmitter.addListener('BleManagerDiscoverPeripheral', this.handleDiscoverPeripheral);
+        this.handlerDiscover = BleEmitter.addListener('BleManagerDiscoverPeripheral', this.handleDiscoverPeripheral);
         if (Platform.OS === 'android' && Platform.Version >= 23) {
             PermissionsAndroid.check(PermissionsAndroid.PERMISSIONS.ACCESS_COARSE_LOCATION).then((result) => {
                 if (!result) {
@@ -40,6 +32,11 @@ class PairingScreen extends React.Component {
         this.scanDevice();
     }
 
+    componentWillUnmount() {
+        BleEmitter.removeAllListeners();
+        this.handlerDiscover = null;
+    }
+
     handleDiscoverPeripheral = (peripheral) => {
         if (peripheral.id && !this.state.locks.has(peripheral.id)) {
             let newMap = new Map(this.state.locks.entries());
@@ -54,10 +51,10 @@ class PairingScreen extends React.Component {
 
     scanDevice = () => {
         this.setState({ scanning: true });
-        BleManager.scan([UUID.AUTH_SERVICE], 6, true);
+        BleManager.scan([UUID.AUTH_SERVICE], 3, true);
         setTimeout(() => {
             this.setState({ scanning: false });
-        }, 6000);
+        }, 3000);
     }
 
     keyExtractor = (item, index) => {
@@ -77,10 +74,10 @@ class PairingScreen extends React.Component {
                 </View>
             </View>
             <TouchableWithoutFeedback onPress={() => {
-                this.props.navigation.navigate('connect', item);
+                this.props.navigation.navigate('ConnectScreen', { peripheral: item });
             }}>
                 <View style={styles.connectBtn}>
-                    <Text style={[TEXT.BOLD, { fontSize: 15 }]}>Connect</Text>
+                    <Text style={TEXT.BOLD(15)}>Connect</Text>
                 </View>
             </TouchableWithoutFeedback>
         </View>
@@ -92,15 +89,22 @@ class PairingScreen extends React.Component {
             return <FlatList data={Array.from(locks.values())} keyExtractor={this.keyExtractor} renderItem={this.renderItem} />
         } else {
             if (this.state.scanning) {
-                return <Text style={[TEXT.BOLD, { fontSize: 20 }]}>Searching...</Text>
+                return <Text style={TEXT.BOLD(20)}>Searching...</Text>
             } else {
                 return <View>
-                    <Text style={[TEXT.REGULAR, { color: COLOR.DANGER, fontSize: 16 }]}>Please make sure the lock is powered!</Text>
+                    <Text style={TEXT.REGULAR(16, COLOR.DANGER)}>Please make sure the lock is powered!</Text>
                     <TouchableWithoutFeedback onPress={this.scanDevice}>
                         <View style={styles.scanBtn}>
-                            <Text style={[TEXT.BOLD, { fontSize: 28 }]}>Scan</Text>
+                            <Text style={TEXT.BOLD(28)}>Scan</Text>
                         </View>
                     </TouchableWithoutFeedback>
+                    {/* <TouchableWithoutFeedback onPress={() => {
+                        this.props.navigation.navigate('ConnectScreen');
+                    }}>
+                        <View style={styles.connectBtn}>
+                            <Text style={TEXT.BOLD(15)}>Connect</Text>
+                        </View>
+                    </TouchableWithoutFeedback> */}
                 </View>
             }
         }
@@ -134,7 +138,7 @@ const styles = StyleSheet.create({
         height: 50,
         backgroundColor: COLOR.SUCCESS,
         justifyContent: 'center',
-        ...SHADOW.BUTTON
+        ...SHADOW
     },
     device: {
         backgroundColor: COLOR.SECONDARY,
@@ -143,7 +147,7 @@ const styles = StyleSheet.create({
         height: 170,
         marginTop: 10,
         justifyContent: 'center',
-        ...SHADOW.BOX
+        ...SHADOW
     },
     connectBtn: {
         height: 50,
@@ -151,12 +155,11 @@ const styles = StyleSheet.create({
         marginTop: 20,
         backgroundColor: COLOR.PRIMARY,
         justifyContent: 'center',
-        ...SHADOW.BUTTON
+        ...SHADOW
     },
     detailFont: {
-        fontSize: 16,
         marginBottom: 10,
-        ...TEXT.REGULAR
+        ...TEXT.REGULAR(16)
     },
     top: {
         flexDirection: 'row',

@@ -5,6 +5,7 @@ import { createStackNavigator, createAppContainer, createSwitchNavigator } from 
 import PairingScreen from './screen/PairingScreen';
 import HomeLoadingScreen from './screen/HomeLoadingScreen';
 import HomeScreen from './screen/HomeScreen';
+import ConnectScreen from './screen/ConnectScreen';
 
 useScreens();
 
@@ -29,7 +30,8 @@ const transitionConfig = () => {
 }
 
 const PairingStack = createStackNavigator({
-  PairingScreen
+  PairingScreen,
+  ConnectScreen
 }, {
     headerMode: 'none',
     initialRouteName: "PairingScreen",

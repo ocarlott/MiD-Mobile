@@ -5,56 +5,55 @@ export const COLOR = {
     SECONDARY: "#FFF",
     DANGER: "#E74C3C",
     SUCCESS: "#1ABC9C",
-    WARNING: "#F39C12"
+    WARNING: "#F39C12",
+    CANCEL: "#404040"
 };
 
-export const SHADOW = StyleSheet.create({
-    BUTTON: {
-        shadowColor: 'black',
-        shadowOffset: { width: 0, height: 3 },
-        shadowRadius: 3,
-        shadowOpacity: 0.3
-    },
-    BOX: {
-        shadowColor: 'black',
-        shadowOffset: { width: 0, height: 3 },
-        shadowRadius: 3,
-        shadowOpacity: 0.3
-    }
-});
+export const SHADOW = {
+    shadowColor: 'black',
+    shadowOffset: { width: 0, height: 3 },
+    shadowRadius: 3,
+    shadowOpacity: 0.3
+};
 
-export const TEXT = StyleSheet.create({
-    BOLD: {
+export const TEXT = {
+    BOLD: (size, color = 'white') => ({
         fontFamily: 'IBM Plex Sans SemiBold',
-        color: 'white',
-        textAlign: 'center'
-    },
-    LIGHT: {
+        color: color,
+        textAlign: 'center',
+        fontSize: size
+    }),
+    LIGHT: (size, color = 'white') => ({
         fontFamily: 'IBM Plex Sans Light',
-        color: 'white',
-        textAlign: 'center'
-    },
-    REGULAR: {
+        color: color,
+        textAlign: 'center',
+        fontSize: size
+    }),
+    REGULAR: (size, color = 'white') => ({
         fontFamily: 'IBM Plex Sans',
-        color: 'white',
-        textAlign: 'center'
-    },
-    BOLD_ITATIC: {
+        color: color,
+        textAlign: 'center',
+        fontSize: size
+    }),
+    BOLD_ITATIC: (size, color = 'white') => ({
         fontFamily: 'IBM Plex Sans SemiBold Italic',
-        color: 'white',
-        textAlign: 'center'
-    },
-    LIGHT_ITALIC: {
+        color: color,
+        textAlign: 'center',
+        fontSize: size
+    }),
+    LIGHT_ITALIC: (size, color = 'white') => ({
         fontFamily: 'IBM Plex Sans Light Italic',
-        color: 'white',
-        textAlign: 'center'
-    },
-    REGULAR_ITALIC: {
+        color: color,
+        textAlign: 'center',
+        fontSize: size
+    }),
+    REGULAR_ITALIC: (size, color = 'white') => ({
         fontFamily: 'IBM Plex Sans Italic',
-        color: 'white',
-        textAlign: 'center'
-    }
-});
+        color: color,
+        textAlign: 'center',
+        fontSize: size
+    })
+};
 
 export const UUID = {
     AUTH_SERVICE: "aec1"
