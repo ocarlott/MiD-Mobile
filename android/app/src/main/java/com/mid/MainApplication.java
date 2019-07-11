@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
+import com.airbnb.android.react.lottie.LottiePackage;
 import it.innove.BleManagerPackage;
 import com.swmansion.rnscreens.RNScreensPackage;
 import com.facebook.react.ReactNativeHost;

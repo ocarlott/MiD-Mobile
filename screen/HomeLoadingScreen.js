@@ -1,6 +1,7 @@
 import React from 'react';
 import { AsyncStorage } from 'react-native';
-import Loader from '../components/Loader';
+// import Loader from '../components/Loader';
+import LottieView from 'lottie-react-native';
 
 class HomeLoadingScreen extends React.Component {
 
@@ -26,7 +27,7 @@ class HomeLoadingScreen extends React.Component {
     }
 
     render() {
-        return <Loader />
+        return <LottieView source={require('../assets/loader.json')} autoPlay loop />;
     }
 }
 
