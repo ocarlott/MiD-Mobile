@@ -29,5 +29,7 @@ target 'mid' do
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
   pod 'RNScreens', :path => '../node_modules/react-native-screens'
   pod 'react-native-ble-manager', :path => '../node_modules/react-native-ble-manager'
+  pod 'lottie-react-native', :path => '../node_modules/lottie-react-native', :modular_headers => true
+  pod 'lottie-ios', '~> 3.0.4', :modular_headers => true
   use_native_modules!
 end

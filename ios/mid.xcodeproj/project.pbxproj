@@ -17,9 +17,8 @@
 		76051AB367224F94841CBDF5 /* plexl.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3997FCFF52ED4BCA8B6568A3 /* plexl.ttf */; };
 		9B7E8E0ECA2243BB90FA4179 /* plexr.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98285C9E6701481DBAB3CBB8 /* plexr.ttf */; };
 		9FE5AB6D29DB441AA0A7118B /* plexbi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 041EFFCFDD604FEA951AF989 /* plexbi.ttf */; };
+		AA214E2722D7C77E00DE4508 /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA214E2622D7C77E00DE4508 /* Empty.swift */; };
 		AA73A79C22D664E7000CCD0B /* libReact-Core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA73A79B22D664E7000CCD0B /* libReact-Core.a */; };
-		AAA2673822D68E030096D69C /* BLEManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA2673722D68E030096D69C /* BLEManager.swift */; };
-		AAA2673A22D68E480096D69C /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAA2673922D68E480096D69C /* CoreBluetooth.framework */; };
 		C1E0C9B34074408BA3318377 /* plexli.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6740D9C447DF4BC49E5C2199 /* plexli.ttf */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +44,41 @@
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = BleManager;
 		};
+		AA7AD3CD22D794390072311B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA7AD3C422D794390072311B /* Lottie.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 486E83B2220A317C007CD915;
+			remoteInfo = Lottie_iOS;
+		};
+		AA7AD3CF22D794390072311B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA7AD3C422D794390072311B /* Lottie.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 486E84E2220A357D007CD915;
+			remoteInfo = Lottie_tvOS;
+		};
+		AA7AD3D122D794390072311B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA7AD3C422D794390072311B /* Lottie.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 486E8567220A3605007CD915;
+			remoteInfo = Lottie_macOS;
+		};
+		AA7AD3D322D794390072311B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA7AD3C422D794390072311B /* Lottie.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 486E85F3220A36F6007CD915;
+			remoteInfo = LottieLibraryIOS;
+		};
+		AA7AD3D522D794390072311B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA7AD3C422D794390072311B /* Lottie.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 486E8675220A3751007CD915;
+			remoteInfo = LottieLibraryMacOS;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -64,13 +98,13 @@
 		6740D9C447DF4BC49E5C2199 /* plexli.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = plexli.ttf; path = ../assets/fonts/plexli.ttf; sourceTree = "<group>"; };
 		8DC8A26681A8F86F5C1C9C4B /* Pods-mid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mid.release.xcconfig"; path = "Pods/Target Support Files/Pods-mid/Pods-mid.release.xcconfig"; sourceTree = "<group>"; };
 		98285C9E6701481DBAB3CBB8 /* plexr.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = plexr.ttf; path = ../assets/fonts/plexr.ttf; sourceTree = "<group>"; };
+		AA214E2622D7C77E00DE4508 /* Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
 		AA2D41A722D66E1E00A53314 /* RNScreens.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNScreens.xcodeproj; path = "../node_modules/react-native-screens/ios/RNScreens.xcodeproj"; sourceTree = "<group>"; };
 		AA73A74122D662C8000CCD0B /* BleManager.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BleManager.xcodeproj; path = "../node_modules/react-native-ble-manager/ios/BleManager.xcodeproj"; sourceTree = "<group>"; };
 		AA73A79B22D664E7000CCD0B /* libReact-Core.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-Core.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA73A7AE22D668E1000CCD0B /* libReact-cxxreact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-cxxreact.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AAA2673622D68E030096D69C /* mid-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mid-Bridging-Header.h"; sourceTree = "<group>"; };
-		AAA2673722D68E030096D69C /* BLEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEManager.swift; sourceTree = "<group>"; };
-		AAA2673922D68E480096D69C /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		AA7AD3C422D794390072311B /* Lottie.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Lottie.xcodeproj; path = "../node_modules/lottie-ios/Lottie.xcodeproj"; sourceTree = "<group>"; };
+		AAB806CD22D79A1200002EFB /* mid-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mid-Bridging-Header.h"; sourceTree = "<group>"; };
 		C2E4FCC62798A8A561B017FD /* libPods-mid.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mid.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
@@ -81,7 +115,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAA2673A22D68E480096D69C /* CoreBluetooth.framework in Frameworks */,
 				AA73A79C22D664E7000CCD0B /* libReact-Core.a in Frameworks */,
 				63D037966C24DECE217BE15F /* libPods-mid.a in Frameworks */,
 			);
@@ -113,8 +146,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
-				AAA2673722D68E030096D69C /* BLEManager.swift */,
-				AAA2673622D68E030096D69C /* mid-Bridging-Header.h */,
+				AAB806CD22D79A1200002EFB /* mid-Bridging-Header.h */,
+				AA214E2622D7C77E00DE4508 /* Empty.swift */,
 			);
 			name = mid;
 			sourceTree = "<group>";
@@ -122,7 +155,6 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AAA2673922D68E480096D69C /* CoreBluetooth.framework */,
 				AA73A7AE22D668E1000CCD0B /* libReact-cxxreact.a */,
 				AA73A79B22D664E7000CCD0B /* libReact-Core.a */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
@@ -135,6 +167,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				AA7AD3C422D794390072311B /* Lottie.xcodeproj */,
 				AA2D41A722D66E1E00A53314 /* RNScreens.xcodeproj */,
 				AA73A74122D662C8000CCD0B /* BleManager.xcodeproj */,
 			);
@@ -186,6 +219,18 @@
 			isa = PBXGroup;
 			children = (
 				AA73A74622D662C8000CCD0B /* libBleManager.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA7AD3C522D794390072311B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA7AD3CE22D794390072311B /* Lottie.framework */,
+				AA7AD3D022D794390072311B /* Lottie.framework */,
+				AA7AD3D222D794390072311B /* Lottie.framework */,
+				AA7AD3D422D794390072311B /* libLottie.a */,
+				AA7AD3D622D794390072311B /* libLottie.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -253,6 +298,10 @@
 					ProjectRef = AA73A74122D662C8000CCD0B /* BleManager.xcodeproj */;
 				},
 				{
+					ProductGroup = AA7AD3C522D794390072311B /* Products */;
+					ProjectRef = AA7AD3C422D794390072311B /* Lottie.xcodeproj */;
+				},
+				{
 					ProductGroup = AA2D41A822D66E1E00A53314 /* Products */;
 					ProjectRef = AA2D41A722D66E1E00A53314 /* RNScreens.xcodeproj */;
 				},
@@ -284,6 +333,41 @@
 			fileType = archive.ar;
 			path = libBleManager.a;
 			remoteRef = AA73A74522D662C8000CCD0B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AA7AD3CE22D794390072311B /* Lottie.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Lottie.framework;
+			remoteRef = AA7AD3CD22D794390072311B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AA7AD3D022D794390072311B /* Lottie.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Lottie.framework;
+			remoteRef = AA7AD3CF22D794390072311B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AA7AD3D222D794390072311B /* Lottie.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Lottie.framework;
+			remoteRef = AA7AD3D122D794390072311B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AA7AD3D422D794390072311B /* libLottie.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libLottie.a;
+			remoteRef = AA7AD3D322D794390072311B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AA7AD3D622D794390072311B /* libLottie.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libLottie.a;
+			remoteRef = AA7AD3D522D794390072311B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -319,7 +403,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
 		F15655E201D910C604A85BF4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -370,8 +454,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
-				AAA2673822D68E030096D69C /* BLEManager.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				AA214E2722D7C77E00DE4508 /* Empty.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +485,35 @@
 				DEVELOPMENT_TEAM = APPN2F7QS9;
 				INFOPLIST_FILE = mid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/DoubleConversion\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Folly\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RNGestureHandler\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RNScreens\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-Core\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-DevSupport\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTActionSheet\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTAnimation\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTBlob\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTImage\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTLinking\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTNetwork\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTSettings\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTText\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTVibration\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTWebSocket\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-cxxreact\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-fishhook\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-jsi\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-jsiexecutor\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-jsinspector\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/glog\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/lottie-ios\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/lottie-react-native\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/react-native-ble-manager\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/yoga\"",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -425,6 +538,35 @@
 				DEVELOPMENT_TEAM = APPN2F7QS9;
 				INFOPLIST_FILE = mid/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/DoubleConversion\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Folly\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RNGestureHandler\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RNScreens\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-Core\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-DevSupport\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTActionSheet\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTAnimation\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTBlob\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTImage\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTLinking\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTNetwork\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTSettings\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTText\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTVibration\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-RCTWebSocket\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-cxxreact\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-fishhook\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-jsi\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-jsiexecutor\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React-jsinspector\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/glog\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/lottie-ios\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/lottie-react-native\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/react-native-ble-manager\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/yoga\"",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
