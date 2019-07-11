@@ -1,6 +1,6 @@
 import React from 'react';
 import { AsyncStorage } from 'react-native';
-// import Loader from '../components/Loader';
+import Loader from '../components/Loader';
 
 class HomeLoadingScreen extends React.Component {
 

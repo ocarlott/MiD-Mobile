@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Image, Platform, StyleSheet, Text, TouchableWithoutFeedback, PermissionsAndroid, NativeModules, NativeEventEmitter } from 'react-native';
 import BleManager from 'react-native-ble-manager';
-import { COLOR, SHADOW, TEXT } from '../Constants';
+import { COLOR, SHADOW, TEXT, UUID } from '../Constants';
 
 const BleManagerModule = NativeModules.BleManager;
 const bleManagerEmitter = new NativeEventEmitter(BleManagerModule);
@@ -42,7 +42,7 @@ class PairingScreen extends React.Component {
     }
 
     handleDiscoverPeripheral = (peripheral) => {
-        console.log(peripheral);
+        console.log("Device discovered: ", peripheral);
     }
 
     componentWillUnmount() {
@@ -51,13 +51,11 @@ class PairingScreen extends React.Component {
 
     scanDevice = () => {
         this.setState({ scanning: true });
-        BleManager.scan(["9e124dde-2782-4173-88af-53ff143fec1"], 5, true).then((results) => {
-            console.log('Scanning...');
+        BleManager.scan([UUID.AUTH_SERVICE], 6, true).then(() => {
+            setTimeout(() => {
+                this.setState({ scanning: false });
+            }, 6000);
         });
-        setTimeout(() => {
-            BleManager.getDiscoveredPeripherals([]).then(pArr => this.setState({ lock: pArr[0] }));
-            this.setState({ scanning: false });
-        }, 5000);
     }
 
     showDevice = () => {

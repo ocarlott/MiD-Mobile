@@ -29,20 +29,5 @@ target 'mid' do
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
   pod 'RNScreens', :path => '../node_modules/react-native-screens'
   pod 'react-native-ble-manager', :path => '../node_modules/react-native-ble-manager'
-  target 'midTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
   use_native_modules!
-end
-
-target 'mid-tvOS' do
-  # Pods for mid-tvOS
-
-  target 'mid-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
 end

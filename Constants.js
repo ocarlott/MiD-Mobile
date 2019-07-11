@@ -49,3 +49,7 @@ export const TEXT = StyleSheet.create({
         textAlign: 'center'
     }
 });
+
+export const UUID = {
+    AUTH_SERVICE: "aec1"
+};
