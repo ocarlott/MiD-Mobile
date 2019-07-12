@@ -1,7 +1,8 @@
 import React from 'react';
-// import { AsyncStorage } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import LottieView from 'lottie-react-native';
+import { View } from 'react-native';
+import { COLOR } from '../Constants';
 
 class HomeLoadingScreen extends React.Component {
 
@@ -27,7 +28,20 @@ class HomeLoadingScreen extends React.Component {
     }
 
     render() {
-        return <LottieView source={require('../assets/loader.json')} autoPlay loop />;
+        return <View style={styles.container}>
+            <LottieView source={require('../assets/loader.json')} autoPlay loop />
+        </View>;
+    }
+}
+
+const styles = {
+    container: {
+        backgroundColor: COLOR.PRIMARY,
+        paddingTop: 250,
+        paddingLeft: 20,
+        paddingRight: 20,
+        alignItems: 'center',
+        flex: 1
     }
 }
 

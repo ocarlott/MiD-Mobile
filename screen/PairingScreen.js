@@ -10,11 +10,16 @@ class PairingScreen extends React.Component {
         this.state = {
             locks: new Map(),
             scanning: false,
+            enabled: false
         };
         this.handlerDiscover = null;
     }
 
     componentDidMount() {
+        BleEmitter.addListener('BleManagerDidUpdateState', (args) => {
+            this.setState({ enabled: args.state == "on" });
+        })
+        BleManager.checkState();
         this.handlerDiscover = BleEmitter.addListener('BleManagerDiscoverPeripheral', this.handleDiscoverPeripheral);
         if (Platform.OS === 'android' && Platform.Version >= 23) {
             PermissionsAndroid.check(PermissionsAndroid.PERMISSIONS.ACCESS_COARSE_LOCATION).then((result) => {
@@ -34,7 +39,6 @@ class PairingScreen extends React.Component {
 
     componentWillUnmount() {
         BleEmitter.removeAllListeners();
-        this.handlerDiscover = null;
     }
 
     handleDiscoverPeripheral = (peripheral) => {
@@ -51,7 +55,7 @@ class PairingScreen extends React.Component {
 
     scanDevice = () => {
         this.setState({ scanning: true });
-        BleManager.scan([UUID.AUTH_SERVICE], 3, true);
+        BleManager.scan([UUID.AUTH.SERVICE], 3, true);
         setTimeout(() => {
             this.setState({ scanning: false });
         }, 3000);
@@ -114,7 +118,7 @@ class PairingScreen extends React.Component {
         const { container, logo } = styles;
         return <View style={container}>
             <Image source={require('../assets/lock.png')} style={logo} />
-            {this.showDevice()}
+            {this.state.enabled ? this.showDevice() : <Text style={TEXT.REGULAR(22, COLOR.DANGER)}>Please turn on bluetooth on your phone!</Text>}
         </View>
     }
 }
@@ -129,8 +133,8 @@ const styles = StyleSheet.create({
         flex: 1
     },
     logo: {
-        width: 80,
-        height: 80,
+        width: 60,
+        height: 60,
         marginBottom: 40
     },
     scanBtn: {

@@ -56,5 +56,27 @@ export const TEXT = {
 };
 
 export const UUID = {
-    AUTH_SERVICE: "aec1"
+    AUTH: {
+        SERVICE: "aec1",
+        CHAR: "aec2"
+    },
+    BATTERY: {
+        SERVICE: "180f",
+        CHAR: "2a19"
+    },
+    ALERT: {
+        SERVICE: "aee1",
+        CHAR: "aee2"
+    },
+    CONFIG: {
+        SERVICE: "aef1",
+        CHAR: "aef2"
+    },
+    INFO: {
+        SERVICE: "180a",
+        MODEL_CHAR: "2a24",
+        SERIAL_CHAR: "2a25",
+        SOFTWARE_CHAR: "2a28",
+        MANU_CHAR: "2a29"
+    }
 };
