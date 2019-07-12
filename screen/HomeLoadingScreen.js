@@ -1,6 +1,6 @@
 import React from 'react';
-import { AsyncStorage } from 'react-native';
-// import Loader from '../components/Loader';
+// import { AsyncStorage } from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 import LottieView from 'lottie-react-native';
 
 class HomeLoadingScreen extends React.Component {

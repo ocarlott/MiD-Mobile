@@ -32,4 +32,6 @@ target 'mid' do
   pod 'lottie-react-native', :path => '../node_modules/lottie-react-native', :modular_headers => true
   pod 'lottie-ios', '~> 3.0.4', :modular_headers => true
   use_native_modules!
+  pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-community/async-storage'
+
 end
