@@ -18,7 +18,11 @@ class HomeLoadingScreen extends React.Component {
         AsyncStorage.getItem("locks").then(str => {
             if (str) {
                 let locks = JSON.parse(str);
-                this.props.navigation.navigate("HomeStack");
+                if (locks.length == 0) {
+                    this.props.navigation.navigate("PairingStack");
+                } else {
+                    this.props.navigation.navigate("HomeStack");
+                }
             } else {
                 this.props.navigation.navigate("PairingStack");
             }
