@@ -12,15 +12,16 @@ class PairingScreen extends React.Component {
             scanning: false,
             enabled: false
         };
-        this.handlerDiscover = null;
+        this.didFocusSubscription = props.navigation.addListener("didFocus", this.componentDidFocus);
+        this.willBlurSubscription = null;
     }
 
-    componentDidMount() {
+    componentDidFocus = () => {
         BleEmitter.addListener('BleManagerDidUpdateState', (args) => {
             this.setState({ enabled: args.state == "on" });
         })
         BleManager.checkState();
-        this.handlerDiscover = BleEmitter.addListener('BleManagerDiscoverPeripheral', this.handleDiscoverPeripheral);
+        BleEmitter.addListener('BleManagerDiscoverPeripheral', this.handleDiscoverPeripheral);
         if (Platform.OS === 'android' && Platform.Version >= 23) {
             PermissionsAndroid.check(PermissionsAndroid.PERMISSIONS.ACCESS_COARSE_LOCATION).then((result) => {
                 if (!result) {
@@ -35,30 +36,35 @@ class PairingScreen extends React.Component {
             });
         }
         this.scanDevice();
+        this.didFocusSubscription.remove();
+        this.willBlurSubscription = this.props.navigation.addListener("willBlur", this.componentWillBlur);
     }
 
-    componentWillUnmount() {
-        BleEmitter.removeAllListeners();
+    componentWillBlur = () => {
+        if (this.state.scanning) {
+            BleManager.stopScan();
+        }
+        this.willBlurSubscription.remove();
+        this.didFocusSubscription = this.props.navigation.addListener("didFocus", this.componentDidFocus);
     }
 
     handleDiscoverPeripheral = (peripheral) => {
-        if (peripheral.id && !this.state.locks.has(peripheral.id)) {
+        if (peripheral.id) {
             let newMap = new Map(this.state.locks.entries());
             newMap.set(peripheral.id, peripheral);
             this.setState({ locks: newMap });
         }
     }
 
-    componentWillUnmount() {
-        this.handlerDiscover.remove();
-    }
-
     scanDevice = () => {
         this.setState({ scanning: true });
-        BleManager.scan([UUID.AUTH.SERVICE], 3, true);
+        BleManager.scan([UUID.AUTH.SERVICE], 100, true);
         setTimeout(() => {
-            this.setState({ scanning: false });
-        }, 3000);
+            if (this.state.locks.size == 0) {
+                BleManager.stopScan();
+                this.setState({ scanning: false });
+            }
+        }, 5000);
     }
 
     keyExtractor = (item, index) => {
@@ -99,7 +105,7 @@ class PairingScreen extends React.Component {
                     <Text style={TEXT.REGULAR(16, COLOR.DANGER)}>Please make sure the lock is powered!</Text>
                     <TouchableWithoutFeedback onPress={this.scanDevice}>
                         <View style={styles.scanBtn}>
-                            <Text style={TEXT.BOLD(28)}>Scan</Text>
+                            <Text style={TEXT.BOLD(25)}>Find My Device</Text>
                         </View>
                     </TouchableWithoutFeedback>
                     {/* <TouchableWithoutFeedback onPress={() => {

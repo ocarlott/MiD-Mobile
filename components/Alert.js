@@ -4,28 +4,44 @@ import { COLOR, TEXT } from '../Constants';
 const { width, height } = Dimensions.get('window');
 
 export default (props) => {
-    const { container, btnArea, sBtn, pBtn, msg } = styles;
-    return <View style={container}>
-        <Text style={msg}>{props.message}</Text>
-        <View style={btnArea}>
-            {props.sAction ? <TouchableWithoutFeedback onPress={() => props.sAction()}>
-                <View style={sBtn}>
-                    <Text style={TEXT.BOLD(16)}>{props.sText || "Cancel"}</Text>
-                </View>
-            </TouchableWithoutFeedback> : null}
-            <TouchableWithoutFeedback onPress={() => props.pAction()}>
-                <View style={[pBtn, {
-                    width: props.sAction ? 150 : 300,
-                    backgroundColor: props.pColor || COLOR.SUCCESS
-                }]}>
-                    <Text style={TEXT.BOLD(16)}>{props.pText}</Text>
-                </View>
-            </TouchableWithoutFeedback>
+    const { container, btnArea, sBtn, pBtn, msg, screen, bg } = styles;
+    return <View style={screen}>
+        <View style={bg} />
+        <View style={container}>
+            <Text style={msg}>{props.message}</Text>
+            <View style={btnArea}>
+                {props.sAction ? <TouchableWithoutFeedback onPress={() => props.sAction()}>
+                    <View style={sBtn}>
+                        <Text style={TEXT.BOLD(16)}>{props.sText || "Cancel"}</Text>
+                    </View>
+                </TouchableWithoutFeedback> : null}
+                <TouchableWithoutFeedback onPress={() => props.pAction()}>
+                    <View style={[pBtn, {
+                        width: props.sAction ? 150 : 300,
+                        backgroundColor: props.pColor || COLOR.SUCCESS
+                    }]}>
+                        <Text style={TEXT.BOLD(16)}>{props.pText}</Text>
+                    </View>
+                </TouchableWithoutFeedback>
+            </View>
         </View>
     </View>
 }
 
 const styles = {
+    screen: {
+        width,
+        height,
+    },
+    bg: {
+        width,
+        height,
+        backgroundColor: 'black',
+        opacity: 0.6,
+        position: 'absolute',
+        top: 0,
+        left: 0
+    },
     container: {
         width: 300,
         height: 200,
