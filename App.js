@@ -35,7 +35,7 @@ const PairingStack = createStackNavigator({
 }, {
     headerMode: 'none',
     initialRouteName: "PairingScreen",
-    transitionConfig
+    // transitionConfig
   });
 
 const HomeStack = createStackNavigator({
@@ -43,7 +43,7 @@ const HomeStack = createStackNavigator({
 }, {
     headerMode: 'none',
     initialRouteName: "HomeScreen",
-    transitionConfig
+    // transitionConfig
   });
 
 const AppNavigator = createSwitchNavigator({

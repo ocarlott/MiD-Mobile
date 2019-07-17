@@ -12,23 +12,28 @@ class HomeLoadingScreen extends React.Component {
 
     componentDidMount() {
         setTimeout(this._bootstrapAsync, 1000);
+        // AsyncStorage.removeItem("locks");
     }
 
     _bootstrapAsync = async () => {
-        AsyncStorage.getItem("locks").then(str => {
-            if (str) {
-                let locks = JSON.parse(str);
-                if (locks.length == 0) {
-                    this.props.navigation.navigate("PairingStack");
-                } else {
-                    this.props.navigation.navigate("HomeStack");
-                }
-            } else {
-                this.props.navigation.navigate("PairingStack");
-            }
-        }).catch(error => {
-            console.log(error);
-        })
+        let locks = [];
+        locks[0] = { id: "abde", name: "MiD-0000001" };
+        locks[1] = { id: "abce", name: "MiD-0000002" };
+        this.props.navigation.navigate("HomeScreen", { locks });
+        // AsyncStorage.getItem("locks").then(str => {
+        //     if (str) {
+        //         let locks = JSON.parse(str);
+        //         if (locks.size == 0) {
+        //             this.props.navigation.navigate("PairingStack");
+        //         } else {
+        //             this.props.navigation.navigate("HomeScreen", { locks });
+        //         }
+        //     } else {
+        //         this.props.navigation.navigate("PairingStack");
+        //     }
+        // }).catch(error => {
+        //     console.log(error);
+        // });
     }
 
     render() {

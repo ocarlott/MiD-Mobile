@@ -20,7 +20,7 @@ class ConnectScreen extends React.Component {
             password: "",
             attempsLeft: 5
         }
-        this.didFocusSubscripttion = props.navigation.addListener("didFocus", this.componentDidFocus);
+        this.didFocusSubscription = props.navigation.addListener("didFocus", this.componentDidFocus);
         this.willBlurSubscription = null;
     }
 
@@ -47,18 +47,15 @@ class ConnectScreen extends React.Component {
         }).catch(() => {
             this.setState({ shouldGoBack: true });
         });
-        this.didFocusSubscripttion.remove();
+        this.didFocusSubscription.remove();
         this.willBlurSubscription = this.props.navigation.addListener("willBlur", this.componentWillBlur);
     }
 
     componentWillBlur = () => {
-        this.willBlurSubscription.remove();
         AsyncStorage.getItem("locks").then(str => {
-            let locks = null;
+            let locks = [];
             if (str) {
                 locks = JSON.parse(str);
-            } else {
-                locks = {}
             }
             locks[this.state.peripheral.id] = this.state.peripheral;
             AsyncStorage.setItem("locks", JSON.stringify(locks)).then(() => {
@@ -66,8 +63,9 @@ class ConnectScreen extends React.Component {
             });
         }).catch(error => {
             console.log(error);
-        })
-        this.didFocusSubscripttion = this.props.navigation.addListener("didFocus", this.componentDidFocus);
+        });
+        this.willBlurSubscription.remove();
+        this.didFocusSubscription = this.props.navigation.addListener("didFocus", this.componentDidFocus);
     }
 
     handleDisconnect = (peripheral) => {
