@@ -1,5 +1,11 @@
 import React from 'react';
 import { Easing, Animated } from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
+import BackgroundJob from 'react-native-background-job';
+import BleManager, { BleEmitter } from '../services/BLEService';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import reducers from './reducers';
 import { useScreens } from 'react-native-screens';
 import { createStackNavigator, createAppContainer, createSwitchNavigator } from 'react-navigation';
 import PairingScreen from './screen/PairingScreen';
@@ -8,6 +14,25 @@ import HomeScreen from './screen/HomeScreen';
 import ConnectScreen from './screen/ConnectScreen';
 
 useScreens();
+
+const store = createStore(reducers);
+
+const backgroundJob = {
+  jobKey: "connectAvailableLocks",
+  job: () => {
+    AsyncStorage.getItem("locks", (str) => {
+      if (str) {
+        let locks = JSON.parse(str);
+
+      }
+    }).catch(() => {
+      console.log("No locks found!");
+    });
+  }
+};
+
+BackgroundJob.register(backgroundJob);
+
 
 const transitionConfig = () => {
   return {
@@ -56,4 +81,4 @@ const AppNavigator = createSwitchNavigator({
 
 const AppContainer = createAppContainer(AppNavigator);
 
-export default () => <AppContainer />;
+export default () => <Provider store={store}><AppContainer /></Provider>;
